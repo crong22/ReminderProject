@@ -13,6 +13,14 @@
 		D85B6DAC2C3A9207004C90F3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D85B6DAB2C3A9207004C90F3 /* Base */; };
 		D85B6DAE2C3A9209004C90F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D85B6DAD2C3A9209004C90F3 /* Assets.xcassets */; };
 		D85B6DB12C3A9209004C90F3 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = D85B6DB02C3A9209004C90F3 /* Base */; };
+		D85B6DBD2C3A9262004C90F3 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = D85B6DBC2C3A9262004C90F3 /* Toast */; };
+		D85B6DC02C3A9291004C90F3 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D85B6DBF2C3A9291004C90F3 /* RealmSwift */; };
+		D85B6DC32C3A929C004C90F3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D85B6DC22C3A929C004C90F3 /* Kingfisher */; };
+		D85B6DC62C3A92AB004C90F3 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = D85B6DC52C3A92AB004C90F3 /* Alamofire */; };
+		D85B6DC92C3A92BC004C90F3 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = D85B6DC82C3A92BC004C90F3 /* SnapKit */; };
+		D85B6DCB2C3A9312004C90F3 /* TotalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85B6DCA2C3A9312004C90F3 /* TotalViewController.swift */; };
+		D85B6DCD2C3A9D1F004C90F3 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85B6DCC2C3A9D1F004C90F3 /* NewViewController.swift */; };
+		D85B6DCF2C3A9F46004C90F3 /* TotalCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85B6DCE2C3A9F46004C90F3 /* TotalCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +32,9 @@
 		D85B6DAD2C3A9209004C90F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D85B6DB02C3A9209004C90F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D85B6DB22C3A9209004C90F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D85B6DCA2C3A9312004C90F3 /* TotalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalViewController.swift; sourceTree = "<group>"; };
+		D85B6DCC2C3A9D1F004C90F3 /* NewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
+		D85B6DCE2C3A9F46004C90F3 /* TotalCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +42,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D85B6DC32C3A929C004C90F3 /* Kingfisher in Frameworks */,
+				D85B6DC62C3A92AB004C90F3 /* Alamofire in Frameworks */,
+				D85B6DC02C3A9291004C90F3 /* RealmSwift in Frameworks */,
+				D85B6DBD2C3A9262004C90F3 /* Toast in Frameworks */,
+				D85B6DC92C3A92BC004C90F3 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +72,9 @@
 		D85B6DA32C3A9207004C90F3 /* ReminderProject */ = {
 			isa = PBXGroup;
 			children = (
+				D85B6DBA2C3A924A004C90F3 /* List */,
+				D85B6DB92C3A9229004C90F3 /* Register */,
+				D85B6DB82C3A921E004C90F3 /* Total */,
 				D85B6DA42C3A9207004C90F3 /* AppDelegate.swift */,
 				D85B6DA62C3A9207004C90F3 /* SceneDelegate.swift */,
 				D85B6DA82C3A9207004C90F3 /* ViewController.swift */,
@@ -65,6 +84,30 @@
 				D85B6DB22C3A9209004C90F3 /* Info.plist */,
 			);
 			path = ReminderProject;
+			sourceTree = "<group>";
+		};
+		D85B6DB82C3A921E004C90F3 /* Total */ = {
+			isa = PBXGroup;
+			children = (
+				D85B6DCA2C3A9312004C90F3 /* TotalViewController.swift */,
+				D85B6DCE2C3A9F46004C90F3 /* TotalCollectionViewCell.swift */,
+			);
+			path = Total;
+			sourceTree = "<group>";
+		};
+		D85B6DB92C3A9229004C90F3 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				D85B6DCC2C3A9D1F004C90F3 /* NewViewController.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		D85B6DBA2C3A924A004C90F3 /* List */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +126,13 @@
 			dependencies = (
 			);
 			name = ReminderProject;
+			packageProductDependencies = (
+				D85B6DBC2C3A9262004C90F3 /* Toast */,
+				D85B6DBF2C3A9291004C90F3 /* RealmSwift */,
+				D85B6DC22C3A929C004C90F3 /* Kingfisher */,
+				D85B6DC52C3A92AB004C90F3 /* Alamofire */,
+				D85B6DC82C3A92BC004C90F3 /* SnapKit */,
+			);
 			productName = ReminderProject;
 			productReference = D85B6DA12C3A9207004C90F3 /* ReminderProject.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +161,13 @@
 				Base,
 			);
 			mainGroup = D85B6D982C3A9207004C90F3;
+			packageReferences = (
+				D85B6DBB2C3A9262004C90F3 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				D85B6DBE2C3A9291004C90F3 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				D85B6DC12C3A929C004C90F3 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				D85B6DC42C3A92AB004C90F3 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				D85B6DC72C3A92BC004C90F3 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = D85B6DA22C3A9207004C90F3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -140,7 +197,10 @@
 			files = (
 				D85B6DA92C3A9207004C90F3 /* ViewController.swift in Sources */,
 				D85B6DA52C3A9207004C90F3 /* AppDelegate.swift in Sources */,
+				D85B6DCD2C3A9D1F004C90F3 /* NewViewController.swift in Sources */,
+				D85B6DCF2C3A9F46004C90F3 /* TotalCollectionViewCell.swift in Sources */,
 				D85B6DA72C3A9207004C90F3 /* SceneDelegate.swift in Sources */,
+				D85B6DCB2C3A9312004C90F3 /* TotalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,8 +357,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,9 +367,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sesac.ReminderProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -324,8 +389,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -333,9 +399,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sesac.ReminderProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -361,6 +431,77 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D85B6DBB2C3A9262004C90F3 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
+		D85B6DBE2C3A9291004C90F3 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 10.52.1;
+			};
+		};
+		D85B6DC12C3A929C004C90F3 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.12.0;
+			};
+		};
+		D85B6DC42C3A92AB004C90F3 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+		D85B6DC72C3A92BC004C90F3 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D85B6DBC2C3A9262004C90F3 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D85B6DBB2C3A9262004C90F3 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
+		};
+		D85B6DBF2C3A9291004C90F3 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D85B6DBE2C3A9291004C90F3 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		D85B6DC22C3A929C004C90F3 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D85B6DC12C3A929C004C90F3 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		D85B6DC52C3A92AB004C90F3 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D85B6DC42C3A92AB004C90F3 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		D85B6DC82C3A92BC004C90F3 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D85B6DC72C3A92BC004C90F3 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D85B6D992C3A9207004C90F3 /* Project object */;
 }
