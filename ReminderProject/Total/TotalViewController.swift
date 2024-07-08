@@ -23,6 +23,12 @@ class TotalViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Listviewcontroller의 < 버튼 설정
+        let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = backBarButtonItem
+
+        
+        
         configureHierarchy()
         configureView()
         configureLayout()
@@ -167,5 +173,12 @@ extension TotalViewController : UICollectionViewDelegate, UICollectionViewDataSo
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.row)
+        let titlename = titlelist[indexPath.row]
+        
+        UserDefaults.standard.setValue(titlename, forKey: "titlename")
+        
+        navigationController?.pushViewController(ListViewController(), animated: true)
+    }
 }

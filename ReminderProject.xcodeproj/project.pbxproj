@@ -26,6 +26,9 @@
 		D85B6DD52C3B5B62004C90F3 /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85B6DD42C3B5B62004C90F3 /* TagViewController.swift */; };
 		D85B6DD72C3B67C6004C90F3 /* PriorityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85B6DD62C3B67C6004C90F3 /* PriorityViewController.swift */; };
 		D85B6DE02C3BF332004C90F3 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85B6DDF2C3BF332004C90F3 /* RealmModel.swift */; };
+		D85B6DE42C3C49B5004C90F3 /* WooTableRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85B6DE32C3C49B5004C90F3 /* WooTableRepository.swift */; };
+		D85B6DE62C3C4A7F004C90F3 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85B6DE52C3C4A7F004C90F3 /* ListViewController.swift */; };
+		D85B6DE82C3C4B16004C90F3 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85B6DE72C3C4B16004C90F3 /* ListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +48,9 @@
 		D85B6DD42C3B5B62004C90F3 /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
 		D85B6DD62C3B67C6004C90F3 /* PriorityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityViewController.swift; sourceTree = "<group>"; };
 		D85B6DDF2C3BF332004C90F3 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
+		D85B6DE32C3C49B5004C90F3 /* WooTableRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WooTableRepository.swift; sourceTree = "<group>"; };
+		D85B6DE52C3C4A7F004C90F3 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		D85B6DE72C3C4B16004C90F3 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +127,8 @@
 		D85B6DBA2C3A924A004C90F3 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				D85B6DE52C3C4A7F004C90F3 /* ListViewController.swift */,
+				D85B6DE72C3C4B16004C90F3 /* ListTableViewCell.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -129,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				D85B6DDF2C3BF332004C90F3 /* RealmModel.swift */,
+				D85B6DE32C3C49B5004C90F3 /* WooTableRepository.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -218,16 +227,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D85B6DE42C3C49B5004C90F3 /* WooTableRepository.swift in Sources */,
 				D85B6DD32C3B4BA4004C90F3 /* DateViewController.swift in Sources */,
 				D85B6DA92C3A9207004C90F3 /* ViewController.swift in Sources */,
 				D85B6DA52C3A9207004C90F3 /* AppDelegate.swift in Sources */,
 				D85B6DE02C3BF332004C90F3 /* RealmModel.swift in Sources */,
 				D85B6DCD2C3A9D1F004C90F3 /* NewViewController.swift in Sources */,
 				D85B6DD72C3B67C6004C90F3 /* PriorityViewController.swift in Sources */,
+				D85B6DE82C3C4B16004C90F3 /* ListTableViewCell.swift in Sources */,
 				D85B6DCF2C3A9F46004C90F3 /* TotalCollectionViewCell.swift in Sources */,
 				D85B6DD12C3AB37E004C90F3 /* NewTableViewCell.swift in Sources */,
 				D85B6DD52C3B5B62004C90F3 /* TagViewController.swift in Sources */,
 				D85B6DA72C3A9207004C90F3 /* SceneDelegate.swift in Sources */,
+				D85B6DE62C3C4A7F004C90F3 /* ListViewController.swift in Sources */,
 				D85B6DCB2C3A9312004C90F3 /* TotalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -74,7 +74,7 @@ class NewViewController : UIViewController {
             print("Realm Create Succeed")
             print(data)
         }
-        navigationController?.pushViewController(TotalViewController(), animated: true)
+        navigationController?.pushViewController(ListViewController(), animated: true)
         
     }
     
