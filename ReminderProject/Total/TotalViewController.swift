@@ -49,7 +49,7 @@ class TotalViewController : UIViewController {
 //        collectionVIew.delegate = self
 //        collectionVIew.dataSource = self
         
-        view.backgroundColor = .black
+        view.backgroundColor = .lightGray
         
         navigationController?.navigationBar.tintColor = .white
         let RightBarButtonItem = UIBarButtonItem(title:"쩜쩜쩜" , style: .plain, target: self, action: #selector(RightClicked))
@@ -70,7 +70,7 @@ class TotalViewController : UIViewController {
         let titleList = UIAlertAction(title: "제목순", style: .default, handler: { action in
             self.titleListClicked()
         })
-        let rankList = UIAlertAction(title: "우선순위낮음", style: .default, handler: { action in
+        let rankList = UIAlertAction(title: "우선순위낮음순", style: .default, handler: { action in
             print("destructive action called")
         })
         
@@ -97,9 +97,8 @@ class TotalViewController : UIViewController {
     }
     
     func configureLayout() {
-        totalTitleLabel.backgroundColor = .blue
         totalTitleLabel.text = "전체"
-        totalTitleLabel.textColor = .white
+        totalTitleLabel.textColor = .darkGray
         totalTitleLabel.textAlignment = .left
         totalTitleLabel.font = .systemFont(ofSize: 24, weight: .bold)
         totalTitleLabel.snp.makeConstraints { make in
@@ -115,7 +114,6 @@ class TotalViewController : UIViewController {
             make.bottom.equalTo(bottomView.snp.top).inset(-10)
         }
         
-        bottomView.backgroundColor = .lightGray
         bottomView.snp.makeConstraints { make in
             make.bottom.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(10)
             make.height.equalTo(40)
