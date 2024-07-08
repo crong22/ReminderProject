@@ -19,6 +19,8 @@ class NewViewController : UIViewController {
     
     var datadate : String?
     var tagdate : String?
+    var prioritydate : String?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -124,11 +126,12 @@ extension NewViewController : UITableViewDelegate , UITableViewDataSource {
             cell.titleLabel.text = "\(date)"
         }else if indexPath.row == 1, let tag = tagdate {
             cell.titleLabel.text = "\(tag)"
-        }else {
+        }else if indexPath.row == 2, let priority = prioritydate {
+            cell.titleLabel.text = "\(priority)"
+        }else{
             cell.titleLabel.text = "\(titlelist[indexPath.row])"
         }
 
-//        cell.titleLabel.text = "\(titlelist[indexPath.row])"
         
         return cell
     }
@@ -149,8 +152,6 @@ extension NewViewController : UITableViewDelegate , UITableViewDataSource {
                     }else{
                         print("4")
                         datadate = value
-//                        print("adadadaadadadad",datadate)
-//                        cell.titleLabel.text = "\(datadate!)"
                         tableView.reloadData()
                     }
                 }
@@ -160,11 +161,30 @@ extension NewViewController : UITableViewDelegate , UITableViewDataSource {
             let vc = TagViewController()
             print("1")
             vc.sendtag = { value in
-                if value.isEmpty, value.contains(" ") {
+                print("value",value)
+                if value.isEmpty || value.contains(" ") {
                     print("2")
+                    self.tagdate = "태그"
                 }else{
                     print("3")
                     self.tagdate = value
+                    tableView.reloadData()
+                }
+                
+            }
+            let nav = UINavigationController(rootViewController: vc)
+            self.present(nav, animated: true)
+        }else if indexPath.row == 2 {
+            let vc = PriorityViewController()
+            print("1")
+            vc.sendpriority = { value in
+                print("value",value)
+                if value.isEmpty || value.contains(" ") {
+                    print("2")
+                    print("우선순위")
+                }else{
+                    print("3")
+                    self.prioritydate = value
                     tableView.reloadData()
                 }
                 
