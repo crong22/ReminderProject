@@ -51,7 +51,7 @@ class PriorityViewController : UIViewController {
         }else if sender.selectedSegmentIndex == 1 {
             sendpriority?("\(list[1])")
         }else {
-            sendpriority?("\(list[1])")
+            sendpriority?("\(list[2])")
         }
         
     }

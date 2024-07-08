@@ -25,6 +25,7 @@
 		D85B6DD32C3B4BA4004C90F3 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85B6DD22C3B4BA4004C90F3 /* DateViewController.swift */; };
 		D85B6DD52C3B5B62004C90F3 /* TagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85B6DD42C3B5B62004C90F3 /* TagViewController.swift */; };
 		D85B6DD72C3B67C6004C90F3 /* PriorityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85B6DD62C3B67C6004C90F3 /* PriorityViewController.swift */; };
+		D85B6DE02C3BF332004C90F3 /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85B6DDF2C3BF332004C90F3 /* RealmModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		D85B6DD22C3B4BA4004C90F3 /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
 		D85B6DD42C3B5B62004C90F3 /* TagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagViewController.swift; sourceTree = "<group>"; };
 		D85B6DD62C3B67C6004C90F3 /* PriorityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityViewController.swift; sourceTree = "<group>"; };
+		D85B6DDF2C3BF332004C90F3 /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		D85B6DA32C3A9207004C90F3 /* ReminderProject */ = {
 			isa = PBXGroup;
 			children = (
+				D85B6DDC2C3BF315004C90F3 /* Database */,
 				D85B6DBA2C3A924A004C90F3 /* List */,
 				D85B6DB92C3A9229004C90F3 /* Register */,
 				D85B6DB82C3A921E004C90F3 /* Total */,
@@ -120,6 +123,14 @@
 			children = (
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		D85B6DDC2C3BF315004C90F3 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				D85B6DDF2C3BF332004C90F3 /* RealmModel.swift */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +221,7 @@
 				D85B6DD32C3B4BA4004C90F3 /* DateViewController.swift in Sources */,
 				D85B6DA92C3A9207004C90F3 /* ViewController.swift in Sources */,
 				D85B6DA52C3A9207004C90F3 /* AppDelegate.swift in Sources */,
+				D85B6DE02C3BF332004C90F3 /* RealmModel.swift in Sources */,
 				D85B6DCD2C3A9D1F004C90F3 /* NewViewController.swift in Sources */,
 				D85B6DD72C3B67C6004C90F3 /* PriorityViewController.swift in Sources */,
 				D85B6DCF2C3A9F46004C90F3 /* TotalCollectionViewCell.swift in Sources */,

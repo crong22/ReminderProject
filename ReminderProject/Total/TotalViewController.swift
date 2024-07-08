@@ -16,6 +16,10 @@ class TotalViewController : UIViewController {
     let newButton = UIButton()
     let listButton = UIButton()
     
+    let titlelist = ["오늘","예정","전체","깃발표시", "완료됨"]
+    let imageList = ["calendar","calendar.badge.clock","tray.full","flag","checkmark.circle"]
+    let backColor = [0 : UIColor.systemBlue, 1 : UIColor.systemRed, 2 : UIColor.systemGray , 3 : UIColor.systemOrange, 4 : UIColor.systemGray]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,9 +30,10 @@ class TotalViewController : UIViewController {
     
     static func collectionViewLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewFlowLayout()
-        let width = UIScreen.main.bounds.width - 100
+        let width = UIScreen.main.bounds.width - 50
+        let height = UIScreen.main.bounds.height - 680
         
-        layout.itemSize = CGSize(width: width/4, height: width/4)
+        layout.itemSize = CGSize(width: width/2, height: height/2)
         layout.scrollDirection = .vertical
         layout.minimumInteritemSpacing = 10
         layout.minimumLineSpacing = 10
@@ -46,10 +51,8 @@ class TotalViewController : UIViewController {
     }
     
     func configureView() {
-//        collectionVIew.delegate = self
-//        collectionVIew.dataSource = self
         
-        view.backgroundColor = .lightGray
+        view.backgroundColor = .black
         
         navigationController?.navigationBar.tintColor = .white
         let RightBarButtonItem = UIBarButtonItem(title:"쩜쩜쩜" , style: .plain, target: self, action: #selector(RightClicked))
@@ -57,6 +60,10 @@ class TotalViewController : UIViewController {
         
         newButton.addTarget(self, action: #selector(newButtonClicked), for: .touchUpInside)
         listButton.addTarget(self, action: #selector(listButtonClicked), for: .touchUpInside)
+        
+        collectionVIew.delegate = self
+        collectionVIew.dataSource = self
+        collectionVIew.register(TotalCollectionViewCell.self, forCellWithReuseIdentifier: TotalCollectionViewCell.id)
     }
     
     @objc func RightClicked() {
@@ -107,7 +114,7 @@ class TotalViewController : UIViewController {
             make.height.equalTo(50)
         }
         
-        collectionVIew.backgroundColor = .green
+        collectionVIew.backgroundColor = .black
         collectionVIew.snp.makeConstraints { make in
             make.top.equalTo(totalTitleLabel.snp.bottom).offset(10)
             make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(10)
@@ -145,14 +152,20 @@ class TotalViewController : UIViewController {
 
 }
 
-//extension TotalViewController : UICollectionViewDelegate, UICollectionViewDataSource {
-//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-//        return 100
-//    }
-//    
-//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-//        <#code#>
-//    }
-//    
-//    
-//}
+extension TotalViewController : UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return titlelist.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TotalCollectionViewCell.id, for: indexPath) as! TotalCollectionViewCell
+
+        cell.titleLabel.text = titlelist[indexPath.row]
+        cell.imageView.backgroundColor = backColor[indexPath.row]
+        cell.imageView.image = UIImage(systemName: imageList[indexPath.row])
+        
+        return cell
+    }
+    
+    
+}

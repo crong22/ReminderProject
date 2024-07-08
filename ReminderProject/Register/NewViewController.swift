@@ -7,6 +7,8 @@
 
 import UIKit
 import SnapKit
+import PhotosUI
+import RealmSwift
 
 let titlelist = ["마감일", "태그", "우선 순위", "이미지 추가"]
 
@@ -16,6 +18,7 @@ class NewViewController : UIViewController {
     let titleTextField = UITextField()
     let memoTextField = UITextField()
     let tableView = UITableView()
+    let imageView = UIImageView()
     
     var datadate : String?
     var tagdate : String?
@@ -46,6 +49,8 @@ class NewViewController : UIViewController {
         tableView.rowHeight = 50
         tableView.separatorStyle = .none
         tableView.register(NewTableViewCell.self, forCellReuseIdentifier: NewTableViewCell.id)
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,6 +60,21 @@ class NewViewController : UIViewController {
     
     @objc func rightClicked() {
         print(#function)
+        let realm = try! Realm()
+        
+        guard let title = titleTextField.text, !title.isEmpty, let content = memoTextField.text else {
+            print("입력해주세요")
+            return
+        }
+        
+        let data = Woo(title: title, content: content, tag: tagdate ?? "태그", finishdate: datadate ?? "마감일", priority: prioritydate ?? "우선 순위")
+        
+        try! realm.write {
+            realm.add(data)
+            print("Realm Create Succeed")
+            print(data)
+        }
+        navigationController?.pushViewController(TotalViewController(), animated: true)
         
     }
     
@@ -83,8 +103,6 @@ class NewViewController : UIViewController {
         titleTextField.backgroundColor = .lightGray
         titleTextField.placeholder = " 제목"
         titleTextField.font = .systemFont(ofSize: 14, weight: .bold)
-//        titleTextField.layer.cornerRadius = 10
-//        titleTextField.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         titleTextField.snp.makeConstraints { make in
             make.top.equalTo(mainView.safeAreaLayoutGuide)
             make.horizontalEdges.equalTo(mainView.safeAreaLayoutGuide)
@@ -94,8 +112,6 @@ class NewViewController : UIViewController {
         memoTextField.backgroundColor = .lightGray
         memoTextField.placeholder = " 메모"
         memoTextField.font = .systemFont(ofSize: 14, weight: .bold)
-//        memoTextField.layer.cornerRadius = 10
-//        memoTextField.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         memoTextField.snp.makeConstraints { make in
             make.top.equalTo(titleTextField.snp.bottom)
         }
@@ -107,6 +123,7 @@ class NewViewController : UIViewController {
             make.height.equalTo(500)
         }
     }
+    
     
 }
 
@@ -191,10 +208,38 @@ extension NewViewController : UITableViewDelegate , UITableViewDataSource {
             }
             let nav = UINavigationController(rootViewController: vc)
             self.present(nav, animated: true)
+        }else if indexPath.row == 3 {
+
+            var configuration = PHPickerConfiguration()
+            configuration.selectionLimit = 3
+            configuration.filter = .any(of: [.screenshots,.images])
+            
+            let picker  = PHPickerViewController(configuration: configuration)
+            picker.delegate = self
+            present(picker, animated: true)
+        
+//            let vc = PHPickerViewController()
+//            let nav = UINavigationController(rootViewController: vc)
+//            self.present(nav, animated: true)
+            
         }
 
         }
     }
 
-    
-
+extension NewViewController : PHPickerViewControllerDelegate {
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        print(#function)
+        
+        picker.dismiss(animated: true)
+        if let itemProvider = results.first?.itemProvider, itemProvider.canLoadObject(ofClass: UIImage.self)
+        {
+            itemProvider.loadObject(ofClass: UIImage.self) { image, error in
+                DispatchQueue.main.async {
+                    print(image)
+                    self.imageView.image = image as? UIImage
+                }
+            }
+        }
+    }
+}
