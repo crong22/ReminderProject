@@ -15,7 +15,7 @@ class DateViewController : UIViewController {
     
     var senddate : ((String) -> Void)?
     
-    var viewModel = DateViewModel()
+    var viewmodel = DateViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +52,9 @@ class DateViewController : UIViewController {
             
         }
         
-        datepicker.addTarget(self, action: #selector(datepickerTapped), for: .editingDidEnd)
+        datepicker.addTarget(self, action: #selector(datepickerTapped), for: .valueChanged)
+        
+        bindData()
     }
     
     @objc func datepickerTapped() {
@@ -61,14 +63,13 @@ class DateViewController : UIViewController {
         dateformat.dateFormat = "yyyy.MM.dd (EEE)"
         var data = dateformat.string(from : datepicker.date)
         senddate?(data)
-        viewModel.inputdate.value = data
+        viewmodel.inputdate.value = data
         
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         print("11111111")
-        bindData()
     }
 
     func bindData() {
@@ -76,8 +77,8 @@ class DateViewController : UIViewController {
             print("vavavavava \(value)")
             let vc = NewViewController()
             vc.datadate = value
-
-            print("데이타데이터 \(vc.datadate)")
+            self.senddate?(value ?? "")
+            print("데이타데이터valuevaluevalue \(vc.datadate)")
         }
     }
     

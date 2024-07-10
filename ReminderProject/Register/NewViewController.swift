@@ -168,18 +168,18 @@ extension NewViewController : UITableViewDelegate , UITableViewDataSource {
         if indexPath.row == 0 {
             let vc = DateViewController()
                 print("row0 > 1")
-//            vc.senddate = { [self] value in
-//                    print("2")
-//                    print("날짜", value)
-//                if value.isEmpty {
-//                        print("3")
-//                        print("마감일")
-//                    }else{
-//                        print("4")
-//                        datadate = value
-//                        tableView.reloadData()
-//                    }
-//                }
+            vc.senddate = { [self] value in
+                    print("2")
+                    print("날짜", value)
+                if value.isEmpty {
+                        print("3")
+                        print("마감일")
+                    }else{
+                        print("4")
+                        datadate = value
+                        tableView.reloadData()
+                    }
+                }
             
             let nav = UINavigationController(rootViewController: vc)
             self.present(nav, animated: true)
