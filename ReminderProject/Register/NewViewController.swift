@@ -12,6 +12,8 @@ import RealmSwift
 
 let titlelist = ["마감일", "태그", "우선 순위", "이미지 추가"]
 
+var viewmodel = DateViewModel()
+
 class NewViewController : UIViewController {
     
     let mainView = UIView()
@@ -40,24 +42,29 @@ class NewViewController : UIViewController {
         let leftBarButtonItem = UIBarButtonItem(title:"취소" , style: .plain, target: self, action: #selector(leftClicked))
         navigationItem.leftBarButtonItem = leftBarButtonItem
         
-        
         configure()
         configureLayout()
-        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = 50
         tableView.separatorStyle = .none
         tableView.register(NewTableViewCell.self, forCellReuseIdentifier: NewTableViewCell.id)
-        
-        
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        print("1111111111")
+        bindData()
         tableView.reloadData()
     }
-    
+
+    func bindData() {
+        viewmodel.outputdate.bind { value in
+            self.datadate = value
+            print("데이타데이터 \(self.datadate)")
+        }
+    }
     @objc func rightClicked() {
         print(#function)
         let realm = try! Realm()
@@ -138,8 +145,9 @@ extension NewViewController : UITableViewDelegate , UITableViewDataSource {
         print("cellForRowAt")
         let cell = tableView.dequeueReusableCell(withIdentifier: NewTableViewCell.id, for: indexPath) as! NewTableViewCell
         
-        
         if indexPath.row == 0 , let date = datadate {
+            print("Indexpathrow =0 \(date)")
+            print("IndexPath.row = 0 이당")
             cell.titleLabel.text = "\(date)"
         }else if indexPath.row == 1, let tag = tagdate {
             cell.titleLabel.text = "\(tag)"
@@ -159,19 +167,20 @@ extension NewViewController : UITableViewDelegate , UITableViewDataSource {
         
         if indexPath.row == 0 {
             let vc = DateViewController()
-                print("1")
-            vc.senddate = { [self] value in
-                    print("2")
-                    print("날짜", value)
-                if value.isEmpty {
-                        print("3")
-                        print("마감일")
-                    }else{
-                        print("4")
-                        datadate = value
-                        tableView.reloadData()
-                    }
-                }
+                print("row0 > 1")
+//            vc.senddate = { [self] value in
+//                    print("2")
+//                    print("날짜", value)
+//                if value.isEmpty {
+//                        print("3")
+//                        print("마감일")
+//                    }else{
+//                        print("4")
+//                        datadate = value
+//                        tableView.reloadData()
+//                    }
+//                }
+            
             let nav = UINavigationController(rootViewController: vc)
             self.present(nav, animated: true)
         }else if indexPath.row == 1 {

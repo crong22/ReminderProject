@@ -13,9 +13,23 @@ class ListViewController : UIViewController {
     let titleLabel = UILabel()
     let tableView = UITableView()
     
+    var folder : Folder?
+    
+    var list : [Woo] = []
+    let repository = WooTableRepository()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
+        
+        list = repository.fetchAll()
+        
+//        if let folder = folder {
+//            let value = folder.detail
+//            list = Array(value)
+//        }
+        
         
         view.addSubview(titleLabel)
         view.addSubview(tableView)
@@ -43,6 +57,12 @@ class ListViewController : UIViewController {
             make.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print(#function)
+        tableView.reloadData()
+    }
 
 }
 
@@ -54,8 +74,10 @@ extension ListViewController : UITableViewDelegate , UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ListTableViewCell.id, for: indexPath) as! ListTableViewCell
-        
-        
+        let data = list[indexPath.row]
+        cell.titleLabel.text = data.title
+        cell.contentLabel.text = data.content
+        cell.tagLabel.text = data.tag
         
         return cell
     }

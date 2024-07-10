@@ -29,6 +29,8 @@
 		D85B6DE42C3C49B5004C90F3 /* WooTableRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85B6DE32C3C49B5004C90F3 /* WooTableRepository.swift */; };
 		D85B6DE62C3C4A7F004C90F3 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85B6DE52C3C4A7F004C90F3 /* ListViewController.swift */; };
 		D85B6DE82C3C4B16004C90F3 /* ListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85B6DE72C3C4B16004C90F3 /* ListTableViewCell.swift */; };
+		D85B6E282C3D3EC4004C90F3 /* DateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85B6E272C3D3EC4004C90F3 /* DateViewModel.swift */; };
+		D85B6E2A2C3D3EF8004C90F3 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D85B6E292C3D3EF8004C90F3 /* Observable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		D85B6DE32C3C49B5004C90F3 /* WooTableRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WooTableRepository.swift; sourceTree = "<group>"; };
 		D85B6DE52C3C4A7F004C90F3 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		D85B6DE72C3C4B16004C90F3 /* ListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewCell.swift; sourceTree = "<group>"; };
+		D85B6E272C3D3EC4004C90F3 /* DateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewModel.swift; sourceTree = "<group>"; };
+		D85B6E292C3D3EF8004C90F3 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,8 @@
 		D85B6DA32C3A9207004C90F3 /* ReminderProject */ = {
 			isa = PBXGroup;
 			children = (
+				D85B6E292C3D3EF8004C90F3 /* Observable.swift */,
+				D85B6E262C3D3EBA004C90F3 /* Model */,
 				D85B6DDC2C3BF315004C90F3 /* Database */,
 				D85B6DBA2C3A924A004C90F3 /* List */,
 				D85B6DB92C3A9229004C90F3 /* Register */,
@@ -140,6 +146,14 @@
 				D85B6DE32C3C49B5004C90F3 /* WooTableRepository.swift */,
 			);
 			path = Database;
+			sourceTree = "<group>";
+		};
+		D85B6E262C3D3EBA004C90F3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D85B6E272C3D3EC4004C90F3 /* DateViewModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +241,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D85B6E2A2C3D3EF8004C90F3 /* Observable.swift in Sources */,
 				D85B6DE42C3C49B5004C90F3 /* WooTableRepository.swift in Sources */,
 				D85B6DD32C3B4BA4004C90F3 /* DateViewController.swift in Sources */,
 				D85B6DA92C3A9207004C90F3 /* ViewController.swift in Sources */,
@@ -239,6 +254,7 @@
 				D85B6DD12C3AB37E004C90F3 /* NewTableViewCell.swift in Sources */,
 				D85B6DD52C3B5B62004C90F3 /* TagViewController.swift in Sources */,
 				D85B6DA72C3A9207004C90F3 /* SceneDelegate.swift in Sources */,
+				D85B6E282C3D3EC4004C90F3 /* DateViewModel.swift in Sources */,
 				D85B6DE62C3C4A7F004C90F3 /* ListViewController.swift in Sources */,
 				D85B6DCB2C3A9312004C90F3 /* TotalViewController.swift in Sources */,
 			);

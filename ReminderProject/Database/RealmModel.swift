@@ -8,6 +8,16 @@
 import UIKit
 import RealmSwift
 
+
+class Folder : Object {
+    @Persisted(primaryKey: true) var id: ObjectId // 순번(PK)
+    @Persisted var name: String
+    @Persisted var option: String
+    @Persisted var regDate: Date
+    @Persisted var detail: List<Woo>
+
+}
+
 class Woo: Object {
     @Persisted(primaryKey: true) var id: ObjectId // 순번(PK)
     @Persisted(indexed: true) var title: String // 메모제목(필수)

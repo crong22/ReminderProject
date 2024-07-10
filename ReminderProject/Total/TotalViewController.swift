@@ -20,6 +20,11 @@ class TotalViewController : UIViewController {
     let imageList = ["calendar","calendar.badge.clock","tray.full","flag","checkmark.circle"]
     let backColor = [0 : UIColor.systemBlue, 1 : UIColor.systemRed, 2 : UIColor.systemGray , 3 : UIColor.systemOrange, 4 : UIColor.systemGray]
     
+    
+    var list : [Folder] = []
+    let repository = WooTableRepository()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,7 +32,7 @@ class TotalViewController : UIViewController {
         let backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backBarButtonItem
 
-        
+        repository.detectRealmURL()
         
         configureHierarchy()
         configureView()
@@ -179,6 +184,8 @@ extension TotalViewController : UICollectionViewDelegate, UICollectionViewDataSo
         
         UserDefaults.standard.setValue(titlename, forKey: "titlename")
         
-        navigationController?.pushViewController(ListViewController(), animated: true)
+        let vc = ListViewController()
+//        vc.folder = list[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

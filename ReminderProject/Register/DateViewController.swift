@@ -14,6 +14,9 @@ class DateViewController : UIViewController {
     var datepicker = UIDatePicker()
     
     var senddate : ((String) -> Void)?
+    
+    var viewModel = DateViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,21 +51,36 @@ class DateViewController : UIViewController {
             make.leading.equalTo(view.safeAreaLayoutGuide).offset(143)
             
         }
+        
+        datepicker.addTarget(self, action: #selector(datepickerTapped), for: .editingDidEnd)
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
+    @objc func datepickerTapped() {
         let dateformat = DateFormatter()
         dateformat.locale = Locale(identifier: "ko-KR")
         dateformat.dateFormat = "yyyy.MM.dd (EEE)"
         var data = dateformat.string(from : datepicker.date)
-        print(String(data))
-        
         senddate?(data)
-        print(senddate?(data))
+        viewModel.inputdate.value = data
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("11111111")
+        bindData()
     }
 
+    func bindData() {
+        viewmodel.outputdate.bind { value in
+            print("vavavavava \(value)")
+            let vc = NewViewController()
+            vc.datadate = value
+
+            print("데이타데이터 \(vc.datadate)")
+        }
+    }
+    
     @objc func leftClicked() {
         dismiss(animated: true)
     }

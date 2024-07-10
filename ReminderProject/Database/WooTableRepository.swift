@@ -26,4 +26,14 @@ final class WooTableRepository {
         let value = realm.objects(Woo.self).sorted(byKeyPath: "money", ascending: false)
         return Array(value)
     }
+    
+    func fetchFolder() -> [Folder] {
+        let value = realm.objects(Folder.self)
+        return Array(value)
+    }
+    
+    func detectRealmURL() {
+        print(realm.configuration.fileURL ?? "")
+    }
+    
 }
